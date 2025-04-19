@@ -18,8 +18,7 @@ services:
       else
         echo 'SSH key already present. Not generating new ones.';
       fi;
-      echo 'Use the following private key to access the server';
-      cat /root/.ssh/id_ed25519;
+      echo 'Run this command to extract the private key: docker cp $(docker ps -l -q):/root/.ssh/id_ed25519 .';
       cp /tmp/sshd_config/sshd_config /etc/ssh/sshd_config;
       echo 'Copied sshd_config into /etc/sshd_config.';
       echo 'Creating host keys and starting SSH server.';
