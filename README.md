@@ -12,7 +12,7 @@ docker compose up
 
 Everytime you create the container, the compose will automatically create a new private key. Drop it on the target to connect to the container.
 
-Run the following command to copy the key from the container to your host (safest).
+Run the following command to copy the key from the container to your host.
 
 ```sh
 docker cp $(docker ps -l -q):/root/.ssh/id_ed25519 . 
