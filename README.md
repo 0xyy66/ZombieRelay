@@ -1,5 +1,7 @@
 # Zombie Relay
 
+[PoC post](https://pwnyour.site/2025-04-19-zombie-relay.html) on my blog.
+
 ## Usage
 
 ```sh
@@ -24,6 +26,12 @@ zombierelay-1  | -----END OPENSSH PRIVATE KEY-----
 ```
 
 Make sure to remove the container prefix "zombierelay-1 | " from every line.
+
+Or run the following command to copy the key from the container to your host (safest).
+
+```
+docker cp $(docker ps -l -q):/root/.ssh/id_ed25519 . 
+```
 
 ### Tunnel a remote service on your host
 
